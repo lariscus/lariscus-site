@@ -23,7 +23,7 @@ def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index
 <meta name="description" content="{esc(desc)}">
 <meta name="robots" content="{robots}, max-image-preview:large">
 <meta name="author" content="Lariscus">
-<meta name="theme-color" content="#1b1613">
+<meta name="theme-color" content="#18191b">
 <link rel="canonical" href="{url}">
 <link rel="icon" href="/assets/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -139,7 +139,7 @@ home_schema = [
 ]
 home = page(path="/", title="Lariscus – Drey note vault and dricket Git tickets",
   desc="Lariscus builds open-source, local-first tools for people who work with AI agents: Drey, a private Markdown note vault, and dricket, serverless Git tickets.",
-  og="og-lariscus.png", body=home_body, schema=home_schema)
+  og="og-lariscus.png", body_class="home", body=home_body, schema=home_schema)
 
 # ---------------------------------------------------------------- drey
 dl = f"{GH}/Drey/releases/latest"
@@ -269,7 +269,7 @@ drey_schema = [
 ]
 drey = page(path="/drey/", title="Drey – private local-first Markdown note vault",
   desc="Drey is a free, open-source Markdown note app with live preview, tasks, tags, search and an optional AI assistant with permissions. Plain files, Windows and Linux.",
-  og="og-drey.png", body=drey_body, schema=drey_schema, nav="drey")
+  og="og-drey.png", body_class="drey", body=drey_body, schema=drey_schema, nav="drey")
 
 # ---------------------------------------------------------------- dricket
 dk_body = f"""
