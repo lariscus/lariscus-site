@@ -61,7 +61,7 @@ def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index
 <div><h2>Products</h2><ul><li><a href="/drey/">Drey – note vault</a></li><li><a href="/dricket/">dricket – Git tickets</a></li></ul></div>
 <div><h2>Source</h2><ul><li><a href="{GH}/Drey">Drey on GitHub</a></li><li><a href="{GH}/dricket">dricket on GitHub</a></li><li><a href="{GH}/Drey/releases">Drey releases</a></li><li><a href="{GH}/dricket/releases">dricket releases</a></li></ul></div>
 </div>
-<p class="legal">Both projects are licensed GPL-3.0-or-later. This site sets no cookies, loads no third-party fonts or scripts, and does no tracking.</p>
+<p class="legal">Private, non-commercial open-source projects. Both are licensed GPL-3.0-or-later. This site sets no cookies, loads no third-party fonts or scripts, and does no tracking.</p>
 </div></footer>
 </body>
 </html>
