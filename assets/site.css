@@ -12,7 +12,7 @@
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --maxw: 1120px;
-  --gutter: clamp(24px, 6vw, 72px);
+  --gutter: clamp(28px, 8vw, 112px);
   color-scheme: dark;
 }
 body.drey { --accent: #e8875c; --accent-ink: #1b0f08; --accent-soft: #33241c; }

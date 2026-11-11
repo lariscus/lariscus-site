@@ -40,8 +40,8 @@ def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{BASE}/assets/{og}">
-<link rel="preload" as="style" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="preload" as="style" href="/assets/site.css?v=3">
+<link rel="stylesheet" href="/assets/site.css?v=3">
 {ld(*schema)}</head>
 <body class="{body_class}">
 <a class="skip" href="#main">Skip to content</a>
