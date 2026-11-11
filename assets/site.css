@@ -125,3 +125,6 @@ code { overflow-wrap: anywhere; }
   table.dl th { padding-bottom: 0; border-bottom: 0; }
   table.dl td { padding-top: 4px; }
 }
+.legalpage { max-width: 760px; }
+.legalpage h2 { font-size: 22px; margin: 36px 0 10px; }
+.legalpage p { margin: 0 0 14px; }

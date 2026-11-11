@@ -12,10 +12,10 @@ def esc(s): return html.escape(s, quote=True)
 def ld(*objs):
     return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>\n' for o in objs)
 
-def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index,follow", nav=""):
+def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index,follow", nav="", lang="en"):
     url = BASE + path
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +60,7 @@ def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index
 <div><h2>Lariscus</h2><p>Local-first software for work that people and AI agents share. Open source, plain files, no lock-in.</p></div>
 <div><h2>Products</h2><ul><li><a href="/drey/">Drey – note vault</a></li><li><a href="/dricket/">dricket – Git tickets</a></li></ul></div>
 <div><h2>Source</h2><ul><li><a href="{GH}/Drey">Drey on GitHub</a></li><li><a href="{GH}/dricket">dricket on GitHub</a></li><li><a href="{GH}/Drey/releases">Drey releases</a></li><li><a href="{GH}/dricket/releases">dricket releases</a></li></ul></div>
-<div><h2>Contact</h2><p><a class="mail" data-u="info" data-d="lariscus.de" href="#">info [at] lariscus [dot] de</a></p></div>
+<div><h2>Contact</h2><p><a class="mail" data-u="info" data-d="lariscus.de" href="#">info [at] lariscus [dot] de</a></p><p><a href="/datenschutz/">Datenschutz</a></p></div>
 </div>
 <p class="legal">Private, non-commercial open-source projects. Both are licensed GPL-3.0-or-later. This site sets no cookies, loads no third-party fonts or scripts, and does no tracking.</p>
 </div></footer>
@@ -380,11 +380,50 @@ dk = page(path="/dricket/", title="dricket – serverless Git tickets for humans
   desc="dricket stores tickets as Markdown in Git and claims them by fast-forward push. No server, one atomic claim, a strict CLI that is safe for AI agents. Open source.",
   og="og-dricket.png", body_class="dricket", body=dk_body, schema=dk_schema, nav="dricket")
 
+
+# ---------------------------------------------------------------- privacy (German)
+priv_body = """
+<div class="wrap hero"><div class="legalpage">
+<p class="eyebrow">Datenschutz</p>
+<h1>Datenschutzerklärung</h1>
+<p class="lead">Diese Seite ist ein privates, nicht-kommerzielles Open-Source-Projekt. Hier steht, welche Daten beim Besuch von lariscus.de verarbeitet werden.</p>
+
+<h2>1. Verantwortlicher</h2>
+<p>Henrik Puls<br>Kontakt: <a class="mail" data-u="info" data-d="lariscus.de" href="#">info [at] lariscus [dot] de</a></p>
+
+<h2>2. Hosting bei GitHub Pages</h2>
+<p>Diese Website wird über GitHub Pages ausgeliefert. Anbieter ist GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Verbindungsdaten, insbesondere deine IP-Adresse, Datum und Uhrzeit des Abrufs, die angeforderte Seite, die übertragene Datenmenge sowie Browser- und Betriebssysteminformationen. Ohne diese Verarbeitung kann die Seite nicht ausgeliefert werden.</p>
+<p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und zuverlässigen Bereitstellung der Website). Eine Übermittlung in die USA kann stattfinden; GitHub stützt sie nach eigenen Angaben auf Standardvertragsklauseln der EU-Kommission beziehungsweise das EU-US Data Privacy Framework. Details findest du in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement">Datenschutzerklärung von GitHub</a>.</p>
+<p>Auf diese Daten habe ich keinen Zugriff und keinen Einfluss auf die Speicherdauer.</p>
+
+<h2>3. Was diese Seite nicht tut</h2>
+<ul class="ticks">
+<li>Keine Cookies und kein Local Storage</li>
+<li>Kein Tracking, keine Webanalyse, keine Werbung</li>
+<li>Keine externen Schriftarten, Skripte oder eingebetteten Inhalte von Dritten</li>
+<li>Keine Formulare und keine Kommentarfunktion</li>
+</ul>
+
+<h2>4. Kontaktaufnahme per E-Mail</h2>
+<p>Wenn du mir schreibst, verarbeite ich deine E-Mail-Adresse und den Inhalt der Nachricht, um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, bei einer Anfrage zu einem Vertrag Art. 6 Abs. 1 lit. b DSGVO. Ich lösche die Nachricht, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+<h2>5. Links zu anderen Seiten</h2>
+<p>Die Seite verlinkt auf GitHub (Repositories und Downloads). Mit dem Klick auf einen Link verlässt du diese Seite; für die Datenverarbeitung dort ist GitHub verantwortlich.</p>
+
+<h2>6. Deine Rechte</h2>
+<p>Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Wende dich dazu an die oben genannte Adresse. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, etwa der für deinen Wohnort zuständigen Landesdatenschutzbehörde.</p>
+
+<p class="note" style="margin-top:32px">Stand: November 2026</p>
+</div></div>
+"""
+priv = page(path="/datenschutz/", title="Datenschutzerklärung – Lariscus", desc="Datenschutzerklärung für lariscus.de: Hosting bei GitHub Pages, keine Cookies, kein Tracking.",
+  og="og-lariscus.png", body=priv_body, robots="noindex,follow", lang="de")
+
 # ---------------------------------------------------------------- 404
 nf = page(path="/404.html", title="Page not found – Lariscus", desc="This page does not exist.", og="og-lariscus.png", robots="noindex",
   body='<div class="wrap hero"><p class="eyebrow">404</p><h1>This page is not here.</h1><p class="lead">The link may be old or mistyped.</p><div class="cta"><a class="btn primary" href="/">Back to Lariscus</a><a class="btn" href="/drey/">Drey</a><a class="btn" href="/dricket/">dricket</a></div></div>')
 
-for rel, content in {"index.html":home, "drey/index.html":drey, "dricket/index.html":dk, "404.html":nf}.items():
+for rel, content in {"index.html":home, "drey/index.html":drey, "dricket/index.html":dk, "404.html":nf, "datenschutz/index.html":priv}.items():
     p = ROOT/rel; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(content, encoding="utf-8")
 
 urls = ["/", "/drey/", "/dricket/"]
