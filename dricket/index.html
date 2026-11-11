@@ -26,7 +26,7 @@
 <meta name="twitter:image" content="https://lariscus.de/assets/og-dricket.png">
 <link rel="preload" as="style" href="/assets/site.css?v=3">
 <link rel="stylesheet" href="/assets/site.css?v=3">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dricket", "applicationCategory": "DeveloperApplication", "operatingSystem": "Linux, macOS, Windows", "softwareVersion": "0.6.2", "description": "Serverless ticketing in Git: tickets are Markdown files and claims are fast-forward pushes. Built for humans and AI agents.", "url": "https://lariscus.de/dricket/", "image": "https://lariscus.de/assets/og-dricket.png", "downloadUrl": "https://github.com/HenrikPuls/dricket/releases/latest", "license": "https://www.gnu.org/licenses/gpl-3.0.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Lariscus", "url": "https://lariscus.de/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dricket", "applicationCategory": "DeveloperApplication", "operatingSystem": "Linux, macOS, Windows", "softwareVersion": "0.6.2", "description": "Serverless ticketing in Git: tickets are Markdown files and claims are fast-forward pushes. Built for humans and AI agents.", "url": "https://lariscus.de/dricket/", "image": "https://lariscus.de/assets/og-dricket.png", "downloadUrl": "https://github.com/lariscus/dricket/releases/latest", "license": "https://www.gnu.org/licenses/gpl-3.0.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Lariscus", "url": "https://lariscus.de/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a ticket server?", "acceptedAnswer": {"@type": "Answer", "text": "No. dricket needs only a Git remote. A local repository works too."}}, {"@type": "Question", "name": "How is it different from a hosted issue tracker?", "acceptedAnswer": {"@type": "Answer", "text": "The tickets are files in your repository, and claiming is an atomic Git operation, so several people and agents can work in parallel without a central service. It is a coordination layer, not a project-management suite."}}, {"@type": "Question", "name": "What happens if two agents claim the same ticket?", "acceptedAnswer": {"@type": "Answer", "text": "One fast-forward push lands. The other gets exit code 11 (already claimed) and is told who owns the ticket."}}, {"@type": "Question", "name": "Is it ready for my team?", "acceptedAnswer": {"@type": "Answer", "text": "dricket is in an early phase. It is built for teams and agents that share a ticket repository, and it works well there. Use in large-scale setups with many simultaneous writers has not been tested yet."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Lariscus", "item": "https://lariscus.de/"}, {"@type": "ListItem", "position": 2, "name": "dricket", "item": "https://lariscus.de/dricket/"}]}</script>
 </head>
@@ -37,7 +37,7 @@
 <nav class="main" aria-label="Main">
 <a href="/drey/">Drey</a>
 <a href="/dricket/" aria-current="page">dricket</a>
-<a href="https://github.com/HenrikPuls">GitHub</a>
+<a href="https://github.com/lariscus">GitHub</a>
 </nav></div></header>
 <main id="main">
 
@@ -46,7 +46,7 @@
 <p class="eyebrow">dricket · Git tickets</p>
 <h1>Tickets that live in Git. Claimed by fast-forward.</h1>
 <p class="lead">dricket is a ticketing system with no server. Every ticket is a Markdown file in a Git repository, and who is working on it right now is decided by Git itself: only one fast-forward publication lands.</p>
-<div class="cta"><a class="btn primary" href="https://github.com/HenrikPuls/dricket/releases/latest">Download dk 0.6.2</a><a class="btn" href="https://github.com/HenrikPuls/dricket">View source</a></div>
+<div class="cta"><a class="btn primary" href="https://github.com/lariscus/dricket/releases/latest">Download dk 0.6.2</a><a class="btn" href="https://github.com/lariscus/dricket">View source</a></div>
 <p class="note">One static binary · Linux, macOS and Windows · GPL-3.0-or-later</p>
 </div>
 <figure><pre class="term" aria-label="Example dricket session"><span class="p">$</span> dk add --prefix app -m "Login error" -l bug --unclaimed
@@ -120,12 +120,12 @@ committed app-1 (rev 2, commit …)
 <span class="p">$</span> dk init tickets-store app
 <span class="p">$</span> cd tickets-store
 <span class="p">$</span> dk add -m "First ticket"</pre>
-<div class="cta" style="margin-top:22px"><a class="btn primary" href="https://github.com/HenrikPuls/dricket/releases/latest">Download releases</a><a class="btn" href="https://github.com/HenrikPuls/dricket#readme">Read the README</a></div>
+<div class="cta" style="margin-top:22px"><a class="btn primary" href="https://github.com/lariscus/dricket/releases/latest">Download releases</a><a class="btn" href="https://github.com/lariscus/dricket#readme">Read the README</a></div>
 </div></section>
 
 <section><div class="wrap">
 <h2>Trust model</h2>
-<p class="lead" style="max-width:70ch">Everyone allowed to push the ticket repository can edit tickets; your Git host owns authentication and branch rules. dricket validates documents and every identity, revision, epoch and claim transition, and <code>dk validate</code> can also run as a host-side gate. Report vulnerabilities privately as described in the <a href="https://github.com/HenrikPuls/dricket/blob/main/SECURITY.md">security policy</a>.</p>
+<p class="lead" style="max-width:70ch">Everyone allowed to push the ticket repository can edit tickets; your Git host owns authentication and branch rules. dricket validates documents and every identity, revision, epoch and claim transition, and <code>dk validate</code> can also run as a host-side gate. Report vulnerabilities privately as described in the <a href="https://github.com/lariscus/dricket/blob/main/SECURITY.md">security policy</a>.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -141,7 +141,7 @@ committed app-1 (rev 2, commit …)
 <div class="cols">
 <div><h2>Lariscus</h2><p>Local-first software for work that people and AI agents share. Open source, plain files, no lock-in.</p></div>
 <div><h2>Products</h2><ul><li><a href="/drey/">Drey – note vault</a></li><li><a href="/dricket/">dricket – Git tickets</a></li></ul></div>
-<div><h2>Source</h2><ul><li><a href="https://github.com/HenrikPuls/Drey">Drey on GitHub</a></li><li><a href="https://github.com/HenrikPuls/dricket">dricket on GitHub</a></li><li><a href="https://github.com/HenrikPuls/Drey/releases">Drey releases</a></li><li><a href="https://github.com/HenrikPuls/dricket/releases">dricket releases</a></li></ul></div>
+<div><h2>Source</h2><ul><li><a href="https://github.com/lariscus/Drey">Drey on GitHub</a></li><li><a href="https://github.com/lariscus/dricket">dricket on GitHub</a></li><li><a href="https://github.com/lariscus/Drey/releases">Drey releases</a></li><li><a href="https://github.com/lariscus/dricket/releases">dricket releases</a></li></ul></div>
 </div>
 <p class="legal">Private, non-commercial open-source projects. Both are licensed GPL-3.0-or-later. This site sets no cookies, loads no third-party fonts or scripts, and does no tracking.</p>
 </div></footer>

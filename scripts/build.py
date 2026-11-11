@@ -4,7 +4,7 @@ import json, pathlib, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://lariscus.de"
-GH = "https://github.com/HenrikPuls"
+GH = "https://github.com/lariscus"
 DREY_VER, DK_VER = "0.8.2", "0.6.2"
 
 def esc(s): return html.escape(s, quote=True)
