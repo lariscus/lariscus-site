@@ -339,7 +339,7 @@ dk_body = f"""
 <section id="install"><div class="wrap">
 <h2>Install</h2>
 <p class="lead">One static binary, shipped under one name: <code>dk</code>. Git 2.32 or newer must be installed.</p>
-<pre class="term"><span class="c"># release archive: github.com/HenrikPuls/dricket/releases (SHA-256 checksums included)</span>
+<pre class="term"><span class="c"># release archive: github.com/lariscus/dricket/releases (SHA-256 checksums included)</span>
 <span class="p">$</span> go install github.com/HenrikPuls/dricket/cmd/dk@latest
 <span class="p">$</span> dk init tickets-store app
 <span class="p">$</span> cd tickets-store
