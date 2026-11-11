@@ -12,7 +12,7 @@ def esc(s): return html.escape(s, quote=True)
 def ld(*objs):
     return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>\n' for o in objs)
 
-def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index,follow", nav="", lang="en"):
+def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index,follow", nav="", lang="en", alt=""):
     url = BASE + path
     return f"""<!doctype html>
 <html lang="{lang}">
@@ -25,6 +25,7 @@ def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index
 <meta name="author" content="Lariscus">
 <meta name="theme-color" content="#18191b">
 <link rel="canonical" href="{url}">
+{alt}
 <link rel="icon" href="/assets/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -60,7 +61,7 @@ def page(*, path, title, desc, og, body_class="", body, schema=(), robots="index
 <div><h2>Lariscus</h2><p>Local-first software for work that people and AI agents share. Open source, plain files, no lock-in.</p></div>
 <div><h2>Products</h2><ul><li><a href="/drey/">Drey – note vault</a></li><li><a href="/dricket/">dricket – Git tickets</a></li></ul></div>
 <div><h2>Source</h2><ul><li><a href="{GH}/Drey">Drey on GitHub</a></li><li><a href="{GH}/dricket">dricket on GitHub</a></li><li><a href="{GH}/Drey/releases">Drey releases</a></li><li><a href="{GH}/dricket/releases">dricket releases</a></li></ul></div>
-<div><h2>Contact</h2><p><a class="mail" data-u="info" data-d="lariscus.de" href="#">info [at] lariscus [dot] de</a></p><p><a href="/datenschutz/">Datenschutz</a></p></div>
+<div><h2>Contact</h2><p><a class="mail" data-u="info" data-d="lariscus.de" href="#">info [at] lariscus [dot] de</a></p><p><a href="/privacy/">Privacy</a> · <a href="/datenschutz/">Datenschutz</a></p></div>
 </div>
 <p class="legal">Private, non-commercial open-source projects. Both are licensed GPL-3.0-or-later. This site sets no cookies, loads no third-party fonts or scripts, and does no tracking.</p>
 </div></footer>
@@ -382,8 +383,10 @@ dk = page(path="/dricket/", title="dricket – serverless Git tickets for humans
 
 
 # ---------------------------------------------------------------- privacy (German)
+ALT = '<link rel="alternate" hreflang="de" href="'+BASE+'/datenschutz/">\n<link rel="alternate" hreflang="en" href="'+BASE+'/privacy/">'
 priv_body = """
 <div class="wrap hero"><div class="legalpage">
+<p class="note"><a href="/privacy/" hreflang="en" lang="en">Read in English</a></p>
 <p class="eyebrow">Datenschutz</p>
 <h1>Datenschutzerklärung</h1>
 <p class="lead">Diese Seite ist ein privates, nicht-kommerzielles Open-Source-Projekt. Hier steht, welche Daten beim Besuch von lariscus.de verarbeitet werden.</p>
@@ -417,13 +420,52 @@ priv_body = """
 </div></div>
 """
 priv = page(path="/datenschutz/", title="Datenschutzerklärung – Lariscus", desc="Datenschutzerklärung für lariscus.de: Hosting bei GitHub Pages, keine Cookies, kein Tracking.",
-  og="og-lariscus.png", body=priv_body, robots="noindex,follow", lang="de")
+  og="og-lariscus.png", body=priv_body, robots="noindex,follow", lang="de", alt=ALT)
+
+
+privacy_en_body = """
+<div class="wrap hero"><div class="legalpage">
+<p class="note"><a href="/datenschutz/" hreflang="de" lang="de">Auf Deutsch lesen</a></p>
+<p class="eyebrow">Privacy</p>
+<h1>Privacy policy</h1>
+<p class="lead">This site is a private, non-commercial open-source project. This page explains what data is processed when you visit lariscus.de.</p>
+
+<h2>1. Controller</h2>
+<p>Henrik Puls<br>Contact: <a class="mail" data-u="info" data-d="lariscus.de" href="#">info [at] lariscus [dot] de</a></p>
+
+<h2>2. Hosting on GitHub Pages</h2>
+<p>This website is served by GitHub Pages, operated by GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you open a page, GitHub processes technically necessary connection data, in particular your IP address, the date and time of the request, the requested page, the amount of data transferred, and browser and operating system information. The site cannot be delivered without this processing.</p>
+<p>The legal basis is Art. 6(1)(f) GDPR (legitimate interest in providing the website securely and reliably). Data may be transferred to the USA; according to GitHub, such transfers rely on the European Commission's Standard Contractual Clauses or the EU-US Data Privacy Framework. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a> for details.</p>
+<p>I have no access to this data and no influence on how long it is kept.</p>
+
+<h2>3. What this site does not do</h2>
+<ul class="ticks">
+<li>No cookies and no local storage</li>
+<li>No tracking, no analytics, no advertising</li>
+<li>No third-party fonts, scripts or embedded content</li>
+<li>No forms and no comments</li>
+</ul>
+
+<h2>4. Contact by email</h2>
+<p>If you write to me, I process your email address and the content of your message to answer your request. The legal basis is Art. 6(1)(f) GDPR, or Art. 6(1)(b) GDPR if the request concerns a contract. I delete the message once the matter is settled and no statutory retention duty applies.</p>
+
+<h2>5. Links to other sites</h2>
+<p>This site links to GitHub (repositories and downloads). When you follow a link you leave this site; GitHub is responsible for the data processing there.</p>
+
+<h2>6. Your rights</h2>
+<p>You have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21 GDPR). Contact the address above to exercise them. You can also lodge a complaint with a data protection supervisory authority, for example the one responsible for your place of residence.</p>
+
+<p class="note" style="margin-top:32px">Last updated: November 2026</p>
+</div></div>
+"""
+privacy_en = page(path="/privacy/", title="Privacy policy – Lariscus", desc="Privacy policy for lariscus.de: hosting on GitHub Pages, no cookies, no tracking.",
+  og="og-lariscus.png", body=privacy_en_body, robots="noindex,follow", lang="en", alt=ALT)
 
 # ---------------------------------------------------------------- 404
 nf = page(path="/404.html", title="Page not found – Lariscus", desc="This page does not exist.", og="og-lariscus.png", robots="noindex",
   body='<div class="wrap hero"><p class="eyebrow">404</p><h1>This page is not here.</h1><p class="lead">The link may be old or mistyped.</p><div class="cta"><a class="btn primary" href="/">Back to Lariscus</a><a class="btn" href="/drey/">Drey</a><a class="btn" href="/dricket/">dricket</a></div></div>')
 
-for rel, content in {"index.html":home, "drey/index.html":drey, "dricket/index.html":dk, "404.html":nf, "datenschutz/index.html":priv}.items():
+for rel, content in {"index.html":home, "drey/index.html":drey, "dricket/index.html":dk, "404.html":nf, "datenschutz/index.html":priv, "privacy/index.html":privacy_en}.items():
     p = ROOT/rel; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(content, encoding="utf-8")
 
 urls = ["/", "/drey/", "/dricket/"]
