@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drey – private local-first Markdown note vault</title>
+<meta name="description" content="Drey is a free, open-source Markdown note app with live preview, tasks, tags, search and an optional AI assistant with permissions. Plain files, Windows and Linux.">
+<meta name="robots" content="index,follow, max-image-preview:large">
+<meta name="author" content="Lariscus">
+<meta name="theme-color" content="#1b1613">
+<link rel="canonical" href="https://lariscus.de/drey/">
+<link rel="icon" href="/assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lariscus">
+<meta property="og:title" content="Drey – private local-first Markdown note vault">
+<meta property="og:description" content="Drey is a free, open-source Markdown note app with live preview, tasks, tags, search and an optional AI assistant with permissions. Plain files, Windows and Linux.">
+<meta property="og:url" content="https://lariscus.de/drey/">
+<meta property="og:image" content="https://lariscus.de/assets/og-drey.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Drey – private local-first Markdown note vault">
+<meta name="twitter:description" content="Drey is a free, open-source Markdown note app with live preview, tasks, tags, search and an optional AI assistant with permissions. Plain files, Windows and Linux.">
+<meta name="twitter:image" content="https://lariscus.de/assets/og-drey.png">
+<link rel="preload" as="style" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Drey", "applicationCategory": "ProductivityApplication", "operatingSystem": "Windows, Linux", "softwareVersion": "0.8.2", "description": "Local-first Markdown note vault with live preview, tasks, tags, search and an optional permissioned AI assistant.", "url": "https://lariscus.de/drey/", "image": "https://lariscus.de/assets/og-drey.png", "downloadUrl": "https://github.com/HenrikPuls/Drey/releases/latest", "license": "https://www.gnu.org/licenses/gpl-3.0.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Lariscus", "url": "https://lariscus.de/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Drey send my notes anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Notes stay in your vault folder. Only if you switch on a hosted AI provider, or allow web search or an external MCP server, does the content of a question leave your computer."}}, {"@type": "Question", "name": "Which AI models can I use?", "acceptedAnswer": {"@type": "Answer", "text": "Any local server that speaks the OpenAI-compatible API, such as LM Studio, llama.cpp, vLLM or Ollama. OpenRouter, the Anthropic API, Z.ai and the Claude Code CLI are available as opt-in providers."}}, {"@type": "Question", "name": "Can I use Drey without AI?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The assistant is optional; the editor, tasks, tags, search, templates and Git features work on their own."}}, {"@type": "Question", "name": "Can I keep using my existing Markdown files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Point Drey at any folder of Markdown notes. It never adds frontmatter to a note on its own, and it never moves your folders around."}}, {"@type": "Question", "name": "Is Drey free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Drey is open source under the GNU GPL v3."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Lariscus", "item": "https://lariscus.de/"}, {"@type": "ListItem", "position": 2, "name": "Drey", "item": "https://lariscus.de/drey/"}]}</script>
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+<a class="brand" href="/"><img src="/assets/icon-192.png" width="32" height="32" alt="">Lariscus</a>
+<nav class="main" aria-label="Main">
+<a href="/drey/" aria-current="page">Drey</a>
+<a href="/dricket/">dricket</a>
+<a href="https://github.com/HenrikPuls">GitHub</a>
+</nav></div></header>
+<main id="main">
+
+<div class="wrap hero"><div class="grid">
+<div>
+<p class="eyebrow">Drey · Note vault</p>
+<h1>Your private note vault that runs your work.</h1>
+<p class="lead">Drey is a local-first Markdown note app. Your notes are plain files in a folder you own, with a true in-place live preview, daily notes, tasks, tags, search, diagrams, and an optional AI assistant that reads your vault and acts on it through permissioned tools.</p>
+<div class="cta"><a class="btn primary" href="https://github.com/HenrikPuls/Drey/releases/latest">Download Drey 0.8.2</a><a class="btn" href="https://github.com/HenrikPuls/Drey">View source</a></div>
+<p class="note">Windows installer and portable · Linux AppImage and .deb · GPL-3.0-or-later</p>
+</div>
+<figure><div class="shot"><img src="/assets/drey-overview-1000.webp" srcset="/assets/drey-overview-1000.webp 1000w, /assets/drey-overview-1800.webp 1800w" sizes="(min-width: 1120px) 1080px, 100vw" width="1800" height="1125" alt="Drey main window: calendar, file tree, a note with open tasks and the assistant panel" fetchpriority="high"></div></figure>
+</div></div>
+
+<section><div class="wrap">
+<h2>Everything stays a file</h2>
+<p class="lead">A vault is an ordinary folder, even one on OneDrive or a sync share. There is no database and no proprietary format: Markdown with optional YAML frontmatter.</p>
+<dl class="facts">
+<div><dt>Format</dt><dd>Markdown + YAML</dd></div>
+<div><dt>Storage</dt><dd>Plain folders</dd></div>
+<div><dt>AI</dt><dd>Local first, optional</dd></div>
+<div><dt>Platforms</dt><dd>Windows, Linux</dd></div>
+</dl>
+</div></section>
+
+<section><div class="wrap"><div class="split">
+<div>
+<h2>Write in a live preview</h2>
+<p>Headings, tables and images render in place; syntax markers appear only around your cursor. Switch to source mode whenever you want the raw text.</p>
+<ul class="ticks">
+<li>Highlights, math, callouts, footnotes and emoji</li>
+<li>Slash menu and a formatting strip for quick inserts</li>
+<li>Split panes, tabs and movable docks</li>
+<li>Wikilinks with link-safe rename and move</li>
+<li>PDF export, spellcheck and per-note version history</li>
+</ul>
+</div>
+<figure><div class="shot"><img src="/assets/drey-editor-1000.webp" srcset="/assets/drey-editor-1000.webp 1000w, /assets/drey-editor-1800.webp 1800w" sizes="(min-width: 900px) 60vw, 100vw" width="1800" height="1125" alt="Two Drey panes side by side with a Markdown cheatsheet rendered in live preview" loading="lazy" decoding="async"></div></figure>
+</div></div></section>
+
+<section><div class="wrap"><div class="split flip">
+<div>
+<h2>Find it, plan it, check it off</h2>
+<p>Topics are free inline <code>#tags</code>, never folders. One search field covers tags and free text across the open note, the vault or all your vaults. Tasks carry due dates and priorities inside the note itself and show up in one panel.</p>
+<ul class="ticks">
+<li>Daily notes and quick capture</li>
+<li>Case, whole-word and regex search with vault-wide replace</li>
+<li>Tag rename and merge with prefix colours</li>
+<li>Templates and snippets</li>
+</ul>
+</div>
+<figure><div class="shot"><img src="/assets/drey-search-tasks-1000.webp" srcset="/assets/drey-search-tasks-1000.webp 1000w, /assets/drey-search-tasks-1800.webp 1800w" sizes="(min-width: 900px) 60vw, 100vw" width="1800" height="1125" alt="Drey search results and a task list next to the note they come from" loading="lazy" decoding="async"></div></figure>
+</div></div></section>
+
+<section><div class="wrap"><div class="split">
+<div>
+<h2>An assistant that asks before it acts</h2>
+<p>Point Drey at a local OpenAI-compatible model such as LM Studio, llama.cpp, vLLM or Ollama, and ask questions about your notes. The assistant pulls in the sections that match your question and cites where they came from.</p>
+<ul class="ticks">
+<li>Hosted providers are opt-in and off by default</li>
+<li>Edit access to notes is off, ask-first or automatic, your choice</li>
+<li>Web search and external MCP servers only run when you allow them</li>
+<li>Drey can also act as an MCP server for your other tools</li>
+</ul>
+</div>
+<figure><div class="shot"><img src="/assets/drey-assistant-1000.webp" srcset="/assets/drey-assistant-1000.webp 1000w, /assets/drey-assistant-1800.webp 1800w" sizes="(min-width: 900px) 60vw, 100vw" width="1800" height="1125" alt="Drey assistant answering a question about a note with a task card and search results" loading="lazy" decoding="async"></div></figure>
+</div></div></section>
+
+<section><div class="wrap"><div class="split flip">
+<div>
+<h2>You hold the permissions</h2>
+<p>Every tool the assistant may call has its own switch. Groups that write ask first, and anything that leaves your computer can ask before it runs. A deletion is always confirmed.</p>
+</div>
+<figure><div class="shot"><img src="/assets/drey-tools-1000.webp" srcset="/assets/drey-tools-1000.webp 1000w, /assets/drey-tools-1800.webp 1800w" sizes="(min-width: 900px) 60vw, 100vw" width="1800" height="1125" alt="Drey settings page for assistant tools with per-group permissions" loading="lazy" decoding="async"></div></figure>
+</div></div></section>
+
+<section><div class="wrap"><div class="split">
+<div>
+<h2>Built for real vaults</h2>
+<p>Git-backed vaults get a Source control panel with commit, push, merge, stash and file history. Diagrams are draw.io files that embed like images. Save conflicts open a merge view instead of overwriting.</p>
+<ul class="ticks">
+<li>Several vaults, switch at any time</li>
+<li>Optional file watcher for external changes</li>
+<li>Three themes: Drey, Anthrazit and Cyberpunk</li>
+<li>Office documents open in their own program</li>
+</ul>
+</div>
+<figure><div class="shot"><img src="/assets/drey-git-1000.webp" srcset="/assets/drey-git-1000.webp 1000w, /assets/drey-git-1800.webp 1800w" sizes="(min-width: 900px) 60vw, 100vw" width="1800" height="1125" alt="Drey Source control panel with changed files and commit history" loading="lazy" decoding="async"></div></figure>
+</div></div></section>
+
+<section id="download"><div class="wrap">
+<h2>Download Drey</h2>
+<p class="lead">Version 0.8.2. Installers are around 200 MB.</p>
+<table class="dl">
+<tr><th>Windows</th><td>Installer (<code>drey-0.8.2-setup.exe</code>) or single-file portable build</td></tr>
+<tr><th>Linux AppImage</th><td><code>drey-0.8.2.AppImage</code>: make it executable and run it; updates in place</td></tr>
+<tr><th>Linux .deb</th><td><code>sudo apt install ./drey_0.8.2_amd64.deb</code></td></tr>
+</table>
+<div class="cta" style="margin-top:22px"><a class="btn primary" href="https://github.com/HenrikPuls/Drey/releases/latest">Go to the downloads</a></div>
+<p class="note">Drey checks GitHub for new versions on startup. That request carries no note content, and downloading or installing always asks you first.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Questions</h2>
+<details><summary>Does Drey send my notes anywhere?</summary><p>No. Notes stay in your vault folder. Only if you switch on a hosted AI provider, or allow web search or an external MCP server, does the content of a question leave your computer.</p></details>
+<details><summary>Which AI models can I use?</summary><p>Any local server that speaks the OpenAI-compatible API, such as LM Studio, llama.cpp, vLLM or Ollama. OpenRouter, the Anthropic API, Z.ai and the Claude Code CLI are available as opt-in providers.</p></details>
+<details><summary>Can I use Drey without AI?</summary><p>Yes. The assistant is optional; the editor, tasks, tags, search, templates and Git features work on their own.</p></details>
+<details><summary>Can I keep using my existing Markdown files?</summary><p>Yes. Point Drey at any folder of Markdown notes. It never adds frontmatter to a note on its own, and it never moves your folders around.</p></details>
+<details><summary>Is Drey free?</summary><p>Yes. Drey is open source under the GNU GPL v3.</p></details>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="cols">
+<div><h2>Lariscus</h2><p>Local-first software for work that people and AI agents share. Open source, plain files, no lock-in.</p></div>
+<div><h2>Products</h2><ul><li><a href="/drey/">Drey – note vault</a></li><li><a href="/dricket/">dricket – Git tickets</a></li></ul></div>
+<div><h2>Source</h2><ul><li><a href="https://github.com/HenrikPuls/Drey">Drey on GitHub</a></li><li><a href="https://github.com/HenrikPuls/dricket">dricket on GitHub</a></li><li><a href="https://github.com/HenrikPuls/Drey/releases">Drey releases</a></li><li><a href="https://github.com/HenrikPuls/dricket/releases">dricket releases</a></li></ul></div>
+</div>
+<p class="legal">Both projects are licensed GPL-3.0-or-later. This site sets no cookies, loads no third-party fonts or scripts, and does no tracking.</p>
+</div></footer>
+</body>
+</html>
