@@ -357,14 +357,14 @@ dk_body = f"""
 <details><summary>Do I need a ticket server?</summary><p>No. dricket needs only a Git remote. A local repository works too.</p></details>
 <details><summary>How is it different from a hosted issue tracker?</summary><p>The tickets are files in your repository, and claiming is an atomic Git operation, so several people and agents can work in parallel without a central service. It is a coordination layer, not a project-management suite.</p></details>
 <details><summary>What happens if two agents claim the same ticket?</summary><p>One fast-forward push lands. The other gets exit code 11 (already claimed) and is told who owns the ticket.</p></details>
-<details><summary>Is it production-ready?</summary><p>dricket is an early release. The design is specified, stages v0 to v2 are implemented, and later stages are deliberately deferred. See the project status on GitHub.</p></details>
+<details><summary>Is it ready for my team?</summary><p>dricket is in an early phase. It is built for teams and agents that share a ticket repository, and it works well there. Use in large-scale setups with many simultaneous writers has not been tested yet.</p></details>
 </div></section>
 """
 dk_faq = [
  ("Do I need a ticket server?","No. dricket needs only a Git remote. A local repository works too."),
  ("How is it different from a hosted issue tracker?","The tickets are files in your repository, and claiming is an atomic Git operation, so several people and agents can work in parallel without a central service. It is a coordination layer, not a project-management suite."),
  ("What happens if two agents claim the same ticket?","One fast-forward push lands. The other gets exit code 11 (already claimed) and is told who owns the ticket."),
- ("Is it production-ready?","dricket is an early release. The design is specified, stages v0 to v2 are implemented, and later stages are deliberately deferred. See the project status on GitHub."),
+ ("Is it ready for my team?","dricket is in an early phase. It is built for teams and agents that share a ticket repository, and it works well there. Use in large-scale setups with many simultaneous writers has not been tested yet."),
 ]
 dk_schema = [
  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"dricket","applicationCategory":"DeveloperApplication",
